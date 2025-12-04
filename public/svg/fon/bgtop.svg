@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="871" height="45.938" viewBox="0 0 871 45.938">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a4a4a4;
+        fill-rule: evenodd;
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <path id="bgtop.svg" class="cls-1" d="M137,166.072H995.718L994.009,172H137v-5.927Zm0-13.336H998.812l-1.709,5.928H137v-5.928ZM1002.91,139.4l-2.71,5.928H137V139.4m0-13.335h871l-2.71,5.927H137v-5.927Z" transform="translate(-137 -126.062)"/>
+</svg>

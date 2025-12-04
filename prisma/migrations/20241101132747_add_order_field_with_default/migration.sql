@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Image` MODIFY `order` INTEGER NOT NULL DEFAULT 0;

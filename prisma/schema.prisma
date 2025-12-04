@@ -1,0 +1,80 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:Qaz123-321@localhost:3306/avto"
+  relationMode = "prisma"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  isAdmin   Boolean
+  createdAt DateTime @default(now())
+}
+
+model Brand {
+  id     Int     @id @default(autoincrement())
+  name   String  @unique
+  models Model[]
+  cars   Car[]
+}
+
+model Model {
+  id         Int          @id @default(autoincrement())
+  name       String       
+  brandId    Int          
+  brand      Brand        @relation(fields: [brandId], references: [id])
+  generations Generation[]
+  cars       Car[]
+}
+
+model Generation {
+  id       Int     @id @default(autoincrement())
+  name     String  
+  modelId  Int     
+  model    Model   @relation(fields: [modelId], references: [id])
+  cars     Car[]
+}
+
+model Car {
+  id                Int       @id @default(autoincrement())
+  images            Json?     // Массив JSON объектов для изображений
+  priceUSD          Int       @default(0)
+  priceBYN          Int       @default(0)
+  title             String    @default("")
+  year              Int       @default(0)
+  mileage           String    @default("")
+  engine            String    @default("")
+  transmission      String    @default("")
+  titleLink         String    @default("")
+  bodyType          String    @default("")
+  engineCapacity    String    @default("")
+  drive             String    @default("")
+  salon             String    @default("")
+  material          String    @default("")
+  description       String    @db.Text
+  vip               Boolean   @default(false) // Поле для VIP статуса
+  createdAt         DateTime  @default(now())
+  
+  brandId           Int        
+  modelId           Int        
+  generationId      Int?       // Поле теперь опционально
+  brand             Brand      @relation(fields: [brandId], references: [id])
+  model             Model      @relation(fields: [modelId], references: [id])
+  generation        Generation? @relation(fields: [generationId], references: [id]) // Опциональное отношение
+
+  airbags           String?
+  climate           String?
+  assistance        String?
+  comfort           String?
+  exterior          String?
+  heating           String?
+  interior          String?
+  lights            String?
+  multimedia        String?
+  safety            String?
+}

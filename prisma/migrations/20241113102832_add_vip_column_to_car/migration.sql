@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Car` ADD COLUMN `vip` BOOLEAN NOT NULL DEFAULT false;

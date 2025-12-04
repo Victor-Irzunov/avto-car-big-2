@@ -1,0 +1,281 @@
+/* /app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Шрифт Montserrat Alternates подключается через next/font/google в layout.js.
+   Здесь задаём только сглаживание и базовый цвет текста. */
+body {
+  @apply antialiased;
+  color: #222222;
+}
+
+.fon{
+	background-image: url('../public/fon/fon.webp');
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+}
+
+.fon:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	background: #000000;
+	opacity: 0;
+	z-index: -1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .custom-gradient-border {
+    @apply w-full;
+    background-image: linear-gradient(90deg, rgba(255,255,255,255) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,255) 100%);
+    opacity: 0.3;
+    display: inline-block;
+  }
+}
+
+.text{
+  -webkit-text-stroke-width: 1px;
+    color: #00000000;
+    -webkit-text-stroke-color: #ffffff;
+}
+
+.background-custom {
+  background-image: 
+    linear-gradient(to right bottom, rgba(0, 0, 0, 0.55) 10%, rgba(255, 255, 255, 0) 50%),
+    linear-gradient(to right top, rgba(0, 0, 0, 0.55) 10%, rgba(255, 255, 255, 0) 40%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(255, 255, 255, 0) 75%),
+    linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 25%),
+    url('/fon/fon.webp');
+  background-size: cover;
+  background-position: center;
+}
+.background-custom2 {
+  background-image: 
+    linear-gradient(to right bottom, rgba(0, 0, 0, 0.55) 10%, rgba(255, 255, 255, 0) 50%),
+    linear-gradient(to right top, rgba(0, 0, 0, 0.55) 10%, rgba(255, 255, 255, 0) 40%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.7) 30%, rgba(255, 255, 255, 0) 75%),
+    linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0) 25%),
+    url('/okna-pvh/fon-okna-vizitka.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.text-gradient2 {
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.text-gradient3 {
+  background: linear-gradient(to right, #9BC7F4, #AEDFFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+
+.btn-gradient {
+  background: linear-gradient(
+    120deg, #BCEC03 0%, #BCEC03 100%
+  );
+}
+.bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff -278.56%,
+    #c026d3 -78.47%,
+    #fb7185 91.61%
+  );
+}
+
+
+@keyframes appearLarge {
+  from {
+      width: 0;
+  }
+  to {
+      width: 700px;
+  }
+}
+
+@keyframes appearSmall {
+  from {
+      height: 0;
+  }
+  to {
+      height: 100vh;
+  }
+}
+
+.striped-shining-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.striped-shining-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    75deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 20%,
+    rgba(255, 255, 255, 0.5) 40%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(45deg);
+  animation: shining 4s infinite linear;
+}
+
+@keyframes shining {
+  0% {
+    transform: translateX(-150%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(45deg);
+  }
+}
+
+.shadow{
+  box-shadow:0px 30px 25px -15px #bdec014d;
+}
+.shadowWhite{
+  box-shadow:0px 30px 25px -15px #ffffff4d;
+}
+
+.visuallyhidden {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(0 0 99.9% 99.9%);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+	padding: 0;
+	border: 0;
+}
+
+/* ------upload----- */
+.sortable-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  transition: background-color 0.3s;
+}
+.sortable-item:hover {
+  background-color: #e0e0e0;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.blink-animation {
+  animation: blink 2s infinite;
+}
+.overflow-x-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%) rotate(135deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(135deg);
+  }
+}
+.animate-slide {
+  animation: slide 3s infinite linear;
+}
+
+@keyframes ringing {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  40% { transform: rotate(10deg); }
+  50% { transform: rotate(0deg); }
+}
+.animate-ringing {
+  animation: ringing 1s infinite;
+}
+.animate-ringing2 {
+  animation: ringing 2.5s infinite;
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 100s linear infinite;
+}
+
+
+.visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0 0 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+.font-system {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif;
+}
