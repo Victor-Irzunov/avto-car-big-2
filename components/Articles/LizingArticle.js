@@ -21,7 +21,7 @@ const LizingArticle = () => {
             остаточную стоимость и становится вашей собственностью.
           </p>
           <p className="leading-relaxed text-sm sd:text-base">
-            В автосалоне «АвтоКар» вы можете оформить лизинг на бу
+            В автосалоне на ул.Куйбышева 40 вы можете оформить лизинг на бу
             автомобиль для физических лиц и ИП в Минске без сложных
             процедур, с понятными платежами и возможностью подбора
             оптимального графика.
@@ -57,10 +57,9 @@ const LizingArticle = () => {
           </ul>
         </section>
 
-        {/* Блок 3. Основные условия лизинга в АвтоКар */}
         <section className="mt-7 space-y-3">
           <h3 className="text-xl sd:text-2xl font-semibold">
-            Условия лизинга авто б/у в автосалоне «АвтоКар»
+            Условия лизинга авто б/у в автосалоне на ул.Куйбышева 40
           </h3>
           <ul className="list-disc pl-5 space-y-1.5 text-sm sd:text-base">
             <li>Срок лизинга: от 1 года до 7 лет.</li>
@@ -83,7 +82,7 @@ const LizingArticle = () => {
             </li>
             <li>
               Лизинг доступен на большинство автомобилей с пробегом из
-              каталога автосалона «АвтоКар».
+              каталога автосалона на ул.Куйбышева 40.
             </li>
           </ul>
           <p className="text-sm sd:text-base leading-relaxed">
@@ -206,7 +205,7 @@ const LizingArticle = () => {
         {/* Блок 7. Как оформить лизинг – шаги */}
         <section className="mt-7 space-y-3">
           <h3 className="text-xl sd:text-2xl font-semibold">
-            Как оформить авто б/у в лизинг в «АвтоКар»
+            Как оформить авто б/у в лизинг в на ул.Куйбышева 40
           </h3>
           <ol className="list-decimal pl-5 space-y-1.5 text-sm sd:text-base">
             <li>

@@ -27,7 +27,7 @@ const page = () => {
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               1.2. Настоящая Политика Оператора в отношении обработки персональных данных применяется
               ко всей информации, которую Оператор может получить о посетителях веб-сайта
-              <a href="https://evakuator555.by/" className="underline text-primary"> evakuator555.by</a>.
+              <a href="https://carforbuy.by/" className="underline text-primary"> carforbuy.by</a>.
             </p>
 
             <h2 className="text-2xl font-semibold mt-6">2. Основные понятия, используемые в Политике</h2>
@@ -39,7 +39,7 @@ const page = () => {
             </p>
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               2.3. Веб-сайт — совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу
-              <a href="https://evakuator555.by/" className="underline text-primary"> https://evakuator555.by/</a>;
+              <a href="https://carforbuy.by/" className="underline text-primary"> https://carforbuy.by/</a>;
             </p>
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               2.4. Информационная система персональных данных — совокупность содержащихся в базах данных персональных данных и обеспечивающих их обработку информационных технологий и технических средств;
@@ -62,11 +62,11 @@ const page = () => {
             </p>
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               2.8. Персональные данные — любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта
-              <a href="https://evakuator555.by/" className="underline text-primary"> https://evakuator555.by/</a>;
+              <a href="https://carforbuy.by/" className="underline text-primary"> https://carforbuy.by/</a>;
             </p>
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               2.9. Пользователь — любой посетитель веб-сайта
-              <a href="https://evakuator555.by/" className="underline text-primary"> https://evakuator555.by/</a>;
+              <a href="https://carforbuy.by/" className="underline text-primary"> https://carforbuy.by/</a>;
             </p>
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               2.10. Предоставление персональных данных — действия, направленные на раскрытие персональных данных определенному лицу или определенному кругу лиц;
@@ -109,7 +109,7 @@ const page = () => {
               4.1. Цель обработки персональных данных Пользователя — информирование Пользователя посредством отправки электронных писем;
               заключение, исполнение и прекращение гражданско-правовых договоров; установление с Пользователем обратной связи,
               включая направление уведомлений, запросов, касающихся использования сайта
-              <a href="https://evakuator555.by/" className="underline text-primary"> https://evakuator555.by/</a>, оказания услуг, обработки запросов и заявок от Пользователя.
+              <a href="https://carforbuy.by/" className="underline text-primary"> https://carforbuy.by/</a>, оказания услуг, обработки запросов и заявок от Пользователя.
             </p>
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               4.2. Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах,
@@ -189,7 +189,7 @@ const page = () => {
             </p>
             <p className="text-sm sm:text-base leading-7 text-gray-300">
               8.3. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу:
-              <a href="https://evakuator555.by/politika/" className="underline text-primary"> https://evakuator555.by/politika/</a>.
+              <a href="https://carforbuy.by/politika/" className="underline text-primary"> https://carforbuy.by/politika/</a>.
             </p>
           </div>
 

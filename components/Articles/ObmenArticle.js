@@ -18,7 +18,7 @@ const ObmenArticle = () => {
           авто с пробегом или новое, с возможностью доплаты с вашей стороны или
           со стороны автосалона. Вам не нужно заниматься объявлением, показами и
           оформлением сделки: <strong>автообмен</strong> полностью берёт на себя
-          автосалон «AvtoCar» в Минске.
+          автосалон «на ул.Куйбышева 40» в Минске.
         </p>
 
         {/* Преимущества */}
@@ -177,7 +177,7 @@ const ObmenArticle = () => {
             </div>
             <div className="rounded-2xl bg-[#e6f4ec] p-5 border border-[#03481E]/30">
               <h3 className="text-xl font-semibold mb-3">
-                Обмен авто на авто в «AvtoCar»
+                Обмен авто на авто в «на ул.Куйбышева 40»
               </h3>
               <ul className="space-y-2 text-sm sd:text-base text-gray-800 list-disc list-inside">
                 <li>
@@ -258,7 +258,7 @@ const ObmenArticle = () => {
           <div>
             <Image
               src="/trade-in/obmen-avto-na-avto-v-minske.webp"
-              alt="Обмен авто на авто в Минске — трейд-ин авто в AvtoCar"
+              alt="Обмен авто на авто в Минске — трейд-ин авто в на ул.Куйбышева 40"
               className="rounded-2xl object-cover w-full h-full"
               width={594}
               height={340}

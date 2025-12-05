@@ -3,21 +3,21 @@ import Link from "next/link";
 import React from "react";
 
 export const metadata = {
-  title: "Политика обработки файлов cookie — ООО «АВТОКАРГРУПП»",
+  title: "Политика обработки файлов cookie — ООО АНТВЕНТГОЛД",
   description:
-    "Политика обработки файлов cookie для ООО «АВТОКАРГРУПП». Информация о целях использования cookie, типах и способах управления ими.",
+    "Политика обработки файлов cookie для ООО АНТВЕНТГОЛД. Информация о целях использования cookie, типах и способах управления ими.",
   alternates: { canonical: `${process.env.NEXT_PUBLIC_BASE_URL}/cookie-policy` },
   openGraph: {
-    title: "Политика обработки файлов cookie — ООО «АВТОКАРГРУПП»",
+    title: "Политика обработки файлов cookie — ООО АНТВЕНТГОЛД",
     description:
-      "Политика обработки файлов cookie для ООО «АВТОКАРГРУПП». Информация о целях использования cookie, типах и способах управления ими.",
+      "Политика обработки файлов cookie для ООО АНТВЕНТГОЛД. Информация о целях использования cookie, типах и способах управления ими.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/cookie-policy`,
-    siteName: "ООО «АВТОКАРГРУПП»",
+    siteName: "ООО АНТВЕНТГОЛД",
     type: "website",
   },
 };
 
-const ORG_NAME = 'ООО «АВТОКАРГРУПП»';
+const ORG_NAME = 'ООО АНТВЕНТГОЛД';
 const ORG_ADDRESS = 'г. Минск, ул. пер. С.Ковалевской, д.54 к.1 каб.303-127';
 const ORG_INN = 'УНП 193846922';
 const EMAIL = 'Avg30@bk.ru';

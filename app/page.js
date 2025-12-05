@@ -19,7 +19,7 @@ export default function Home() {
               <div className="relative w-full xz:h-[70vh] sd:h-[90vh] flex flex-col justify-end">
 
                 <h1 className="visuallyhidden">
-                  Авто с пробегом Минск - Авто салон Avto Car
+                  Авто с пробегом Минск - Авто салон на ул.Куйбышева 40
                 </h1>
 
 
@@ -32,7 +32,7 @@ export default function Home() {
                 <div className="absolute left-1/2 -translate-x-1/2 xz:bottom-24 sd:bottom-0 xz:block sd:hidden w-[110%]">
                   <Image
                     src="/img/main-car-mobile.webp"
-                    alt="Автомобиль с пробегом в автосалоне AvtoCar"
+                    alt="Автомобиль с пробегом в автосалоне на ул.Куйбышева 40"
                     width={800}
                     height={900}
                     priority
@@ -43,7 +43,7 @@ export default function Home() {
                 <div className="absolute left-1/2 -translate-x-1/2 xz:hidden sd:block sd:bottom-0 w-[80%] max-w-[900px]">
                   <Image
                     src="/img/main-car.webp"
-                    alt="Автомобиль с пробегом в автосалоне AvtoCar"
+                    alt="Автомобиль с пробегом в автосалоне на ул.Куйбышева 40"
                     width={1400}
                     height={800}
                     priority

@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex items-center justify-between mb-8">
           <Image
             src="/logo/logo.webp"
-            alt="AvtoCar логотип"
+            alt="на ул.Куйбышева 40 логотип"
             width={80}
             height={80}
             className="h-16 w-auto"
@@ -333,7 +333,7 @@ const Footer = () => {
           <div className="absolute -top-11 left-1/2 -translate-x-1/2  bg-[#222222] border-8 border-[#222222]">
             <Image
               src="/logo/logo.webp"
-              alt="AvtoCar логотип"
+              alt="на ул.Куйбышева 40 логотип"
               width={50}
               height={50}
               className="min-h-20 min-w-20 w-auto"

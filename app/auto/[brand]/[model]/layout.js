@@ -2,7 +2,7 @@ export async function generateMetadata({ params: { brand, model } }) {
 	const formattedBrand = brand.charAt(0).toUpperCase() + brand.slice(1);
 	const formattedModel = model.charAt(0).toUpperCase() + model.slice(1);
 
-	const title = `${formattedBrand} ${formattedModel} купить в Минске в кредит и лизинг в автосалоне "AutoCar"`;
+	const title = `${formattedBrand} ${formattedModel} купить в Минске в кредит и лизинг в автосалоне на ул.Куйбышева 40`;
 	const metaDescription = `ᐈ ⭐ ${formattedBrand} ${formattedModel} купить в Минске в кредит и лизинг ✫ Автосалон: Кредит и лизинг на б/у авто ➤➤➤ До 10 лет. ☎️ (33) 355-88-55 ⚡ Большой выбор автомобилей ⚡ Помощь в выборе авто ⭐ Офомление в день подачи ⭐ Без взоса ✓ Без справок и поручителей.`;
 	const keywords = `${brand} ${model} купить в Минске, кредит на авто, ${brand} ${model} лизинг авто, автосалон, кредит на покупку авто, автокредит, машина в лизинг, купить авто в лизинг, кредит на покупку авто бу, лизинг без первого взноса, кредит на авто бу, автолизинг`;
 

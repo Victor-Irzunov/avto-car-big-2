@@ -16,7 +16,7 @@ const KomissionnayaProdazhaArticle = () => {
           <p>
             <strong>Комиссионная продажа авто</strong> — это удобный способ
             продать автомобиль через комиссионный автосалон, не тратя время на
-            показы, переговоры и оформление документов. Автосалон AvtoCar
+            показы, переговоры и оформление документов. Автосалон на ул.Куйбышева 40
             берёт на себя весь процесс: от{" "}
             <strong>приема авто на комиссию</strong> до выдачи ключей новому
             владельцу и выплаты денег вам.
@@ -83,7 +83,7 @@ const KomissionnayaProdazhaArticle = () => {
           </h3>
           <p>
             Все показы автомобиля, общение с клиентами и тест-драйвы проводит
-            менеджер AvtoCar. Вам не нужно приезжать на каждую встречу —
+            менеджер на ул.Куйбышева 40. Вам не нужно приезжать на каждую встречу —
             покупатели общаются с нами напрямую. Мы рассказываем историю
             автомобиля, показываем его особенности и сопровождаем осмотр.
           </p>
@@ -129,8 +129,8 @@ const KomissionnayaProdazhaArticle = () => {
         <div className="grid sd:grid-cols-3 xz:grid-cols-1 gap-6 mt-9">
           <div className="sd:col-span-2 xz:col-span-1">
             <Image
-              src="/komissiya/komissionnaya-prodazha-avtomobilej-v-minske-na-ploshchadke-avtocar.webp"
-              alt="Комиссионная продажа автомобилей в Минске на площадке AvtoCar"
+              src="/komissiya/komissionnaya-prodazha-avtomobilej-v-minske-na-ploshchadke-на ул.Куйбышева 40.webp"
+              alt="Комиссионная продажа автомобилей в Минске на площадке на ул.Куйбышева 40"
               width={1280}
               height={853}
               className="rounded-xl object-cover w-full h-full"
@@ -143,7 +143,7 @@ const KomissionnayaProdazhaArticle = () => {
                 Нужна консультация по комиссионной продаже авто?
               </div>
               <p className="text-gray-700">
-                Менеджер AvtoCar ответит на вопросы и подскажет, как лучше
+                Менеджер на ул.Куйбышева 40 ответит на вопросы и подскажет, как лучше
                 сдать авто на комиссию.
               </p>
               <div className="absolute -bottom-2 left-10 w-4 h-4 bg-white rotate-45"></div>

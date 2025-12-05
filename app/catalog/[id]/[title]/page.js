@@ -43,7 +43,7 @@ async function getMeta(id) {
 export async function generateMetadata({ params }) {
   try {
     const car = await getMeta(params.id);
-    const title = `${car.title} купить в Минске: Лизинг и Кредит | Автосалон «AvtoCar»`;
+    const title = `${car.title} купить в Минске: Лизинг и Кредит | Автосалон «на ул.Куйбышева 40»`;
     const description = `ᐈ ⭐ ${car.title} в прекрасном состоянии. Кредит и лизинг на б/у авто. Звоните!`;
     const canonical = `/catalog/${params.id}/${car.titleLink}`;
 
