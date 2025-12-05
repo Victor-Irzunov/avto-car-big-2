@@ -4,8 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/footer/Footer";
 import { MyContextProvider } from "@/contexts/MyContextProvider";
-import { GoogleTagManager } from "@next/third-parties/google";
-import YandexMetrika from "@/components/Analytics/YandexMetrika";
+// import { GoogleTagManager } from "@next/third-parties/google";
+// import YandexMetrika from "@/components/Analytics/YandexMetrika";
 import ErrorProbe from "@/components/ErrorProbe";
 import { Montserrat_Alternates } from "next/font/google";
 import phoneNumbers from "@/config/config";
@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <head>
-        <GoogleTagManager gtmId="" />
+        {/* <GoogleTagManager gtmId="" /> */}
        
       </head>
       <body className={montserratAlternates.className}>
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
-          <YandexMetrika />
+          {/* <YandexMetrika /> */}
           <BitrixWidget />
         </MyContextProvider>
       </body>
