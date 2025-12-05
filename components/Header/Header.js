@@ -29,25 +29,22 @@ export default function Header() {
     >
       {/* Верхняя линия */}
       <span
-        className={`block absolute h-[2px] w-7 bg-white transition-all duration-300 origin-center ${
-          drawerOpen
+        className={`block absolute h-[2px] w-7 bg-white transition-all duration-300 origin-center ${drawerOpen
             ? "rotate-45 translate-y-0"
             : "-translate-y-[6px] rotate-0"
-        }`}
+          }`}
       />
       {/* Средняя линия */}
       <span
-        className={`block absolute h-[2px] w-7 bg-white transition-all duration-300 origin-center ${
-          drawerOpen ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"
-        }`}
+        className={`block absolute h-[2px] w-7 bg-white transition-all duration-300 origin-center ${drawerOpen ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"
+          }`}
       />
       {/* Нижняя линия */}
       <span
-        className={`block absolute h-[2px] w-7 bg-white transition-all duration-300 origin-center ${
-          drawerOpen
+        className={`block absolute h-[2px] w-7 bg-white transition-all duration-300 origin-center ${drawerOpen
             ? "-rotate-45 translate-y-0"
             : "translate-y-[6px] rotate-0"
-        }`}
+          }`}
       />
     </button>
   );
@@ -67,10 +64,10 @@ export default function Header() {
                   className="cursor-pointer hover:text-primary"
                 >
                   <Image
-                    src="/logo/logo-white.webp"
+                    src="/logo/logo.webp"
                     alt="Логотип"
-                    width={100}
-                    height={100}
+                    width={130}
+                    height={130}
                   />
                 </Link>
                 {pathname !== "/thank-you/" && pathname !== "/politika/" && (
@@ -157,10 +154,10 @@ export default function Header() {
                     className="flex items-center"
                   >
                     <Image
-                      src="/logo/logo-white.webp"
+                      src="/logo/logo.webp"
                       alt="Логотип"
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                     />
                   </Link>
 
@@ -179,9 +176,8 @@ export default function Header() {
 
               {/* Фуллскрин-меню */}
               <div
-                className={`fixed inset-0 z-50 bg-white transition-transform duration-300 ease-in-out ${
-                  drawerOpen ? "translate-x-0" : "translate-x-full"
-                }`}
+                className={`fixed inset-0 z-50 bg-white transition-transform duration-300 ease-in-out ${drawerOpen ? "translate-x-0" : "translate-x-full"
+                  }`}
               >
                 {/* Верхняя чёрная полоса внутри меню */}
                 <div className="flex items-center justify-between px-4 py-3 bg-[#222222]">
@@ -191,10 +187,10 @@ export default function Header() {
                     className="flex items-center"
                   >
                     <Image
-                      src="/logo/logo-white.webp"
+                      src="/logo/logo.webp"
                       alt="Логотип"
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                     />
                   </Link>
 

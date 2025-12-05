@@ -108,7 +108,7 @@ const Page = () => {
 	return (
 		<main className="bg-[#222222] text-white sd:pt-20 xz:pt-28 pb-16 min-h-screen">
 			{/* HERO: комиссионная продажа авто / авто на комиссию */}
-			<section className="container mx-auto sd:px-8 xz:px-3">
+			<section className="container mx-auto">
 				<div className="relative overflow-hidden rounded-[32px] bg-[#050809] sd:px-14 xz:px-6 sd:py-16 xz:py-10">
 					{/* Фон: мобильный / десктоп */}
 					<div
@@ -134,7 +134,7 @@ const Page = () => {
 						{/* Лого */}
 						<div className="flex items-center gap-4 sd:gap-6">
 							<Image
-								src="/logo/logo-white.webp"
+								src="/logo/logo.webp"
 								alt="Логотип автосалона AvtoCar"
 								width={180}
 								height={60}
@@ -278,7 +278,7 @@ const Page = () => {
 			</section>
 
 			{/* Статья: как проходит комиссионная продажа */}
-			<section className="sd:container mx-auto sd:px-8 xz:px-3">
+			<section className="sd:container mx-auto">
 				<KomissionnayaProdazhaArticle />
 			</section>
 

@@ -2,6 +2,7 @@
 import prisma from "@/lib/prisma";
 import PageComponent from "@/components/Comp/PageComponent";
 import { unstable_noStore as noStore } from "next/cache";
+import phoneNumbers from "@/config/config";
 
 // Гарантируем Node.js среду (Prisma не работает на Edge)
 export const runtime = "nodejs";
@@ -28,9 +29,9 @@ async function getData() {
 }
 
 export const metadata = {
-  title: "Купить авто c пробегом в Минске | Лизинг и Кредит | Каталог автосалона «AvtoCar»",
+  title: "Авто c пробегом в Минске | Лизинг и Кредит | Каталог автосалона «AvtoCar»",
   description:
-    "ᐈ ⭐ Автомобили с пробегом в самом крупном автосалоне Минска ⚡ Кредит и лизинг на б/у авто ➤➤➤ До 10 лет. ☎️ (33) 355-88-55 Автосалон «АвтоКар» ⚡ Большой выбор автомобилей ⚡ Помощь в выборе авто ⭐ Только проверенные авто ⭐ Без взоса ✓ Без справок и поручителей ✓ Звоните прямо сейчас!",
+    `⭐ Автомобили б/у в самом крупном автосалоне Минска ⚡ Кредит и лизинг на авто с пробегом ➤➤➤ До 10 лет. ☎️ ${phoneNumbers.mainPhone} Автосалон «АвтоКар» ⚡ Большой выбор автомобилей ⚡ Помощь в выборе авто ⭐ Только проверенные авто ⭐ Без взоса ✓ Без справок и поручителей ✓ Звоните прямо сейчас!`,
   alternates: { canonical: "/catalog/" },
   openGraph: {
     title: "Купить авто c пробегом в Минске | Лизинг и Кредит | Каталог автосалона «AvtoCar»",

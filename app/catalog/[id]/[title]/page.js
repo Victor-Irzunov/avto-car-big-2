@@ -294,7 +294,7 @@ export default async function Page({ params, searchParams }) {
                       >
                         <div>
                           <Image
-                            src="/logo/logo-white.webp"
+                            src="/logo/logo.webp"
                             alt="Логотип - продажа авто в кредит и лизинг"
                             width={80}
                             height={80}

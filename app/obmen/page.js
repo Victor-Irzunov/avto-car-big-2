@@ -91,7 +91,7 @@ const Page = () => {
   return (
     <main className="bg-[#222222] text-white sd:pt-24 xz:pt-28 pb-20 min-h-screen">
       {/* HERO: трейд-ин авто / обмен авто на авто */}
-      <section className="container mx-auto sd:px-8 xz:px-3">
+      <section className="container mx-auto">
         <div className="relative overflow-hidden rounded-[32px] bg-[#050809] sd:px-14 xz:px-6 sd:py-16 xz:py-10">
           {/* Фоновое изображение: мобильное / десктоп */}
           <div
@@ -198,7 +198,7 @@ const Page = () => {
       </section>
 
       {/* Основной контент про трейд-ин авто */}
-      <section className="sd:container mx-auto sd:px-8 xz:px-3">
+      <section className="sd:container mx-auto">
         <ObmenArticle />
       </section>
 

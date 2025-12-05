@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const DAYS_RANGE = 10; // ← сколько дней считать "новинками"
 
@@ -21,6 +22,19 @@ const calcLeasing = (byn) => {
   const termYears = 4; // пример: лизинг на 4 года
   const months = termYears * 12;
   return Math.round(byn / months);
+};
+
+// утилита для сборки src
+const buildUploadUrl = (path) => {
+  if (!path) return "/logo/logo2.webp";
+  if (typeof path !== "string") return "/logo/logo2.webp";
+
+  // если уже абсолютный URL
+  if (/^https?:\/\//i.test(path)) return path;
+
+  // убираем лидирующие /uploads/, потом добавляем один раз
+  const cleaned = path.replace(/^\/+/, "").replace(/^uploads\//, "");
+  return `/uploads/${cleaned}`;
 };
 
 export default function NewCarsSection() {
@@ -53,7 +67,7 @@ export default function NewCarsSection() {
     <section className="sd:mt-16 xz:mt-10 pt-16 sd:pb-32 xz:pb-4 bg-white">
       <div className="container mx-auto">
         {/* H2 — заголовок секции */}
-        <h2 className="sd:text-center xz:text-left text-[32px] sd:text-[44px] font-semibold text-[#0E4D1E] mb-6 sd:mb-10">
+        <h2 className="sd:text-center font-system xz:text-left text-[32px] sd:text-[44px] font-semibold text-[#0E4D1E] mb-6 sd:mb-10">
           Новинки
         </h2>
 
@@ -81,9 +95,14 @@ export default function NewCarsSection() {
               }
 
               const firstImage = imagesArr[0] || null;
-              const imageSrc = firstImage
-                ? `/uploads/${firstImage.thumbnail || firstImage.original || ""}`
-                : "/logo/logo2.webp";
+
+              // для больших карточек берём original (если есть), иначе thumbnail
+              const mainImagePath =
+                (firstImage && (firstImage.original || firstImage.large)) ||
+                (firstImage && firstImage.thumbnail) ||
+                null;
+
+              const imageSrc = buildUploadUrl(mainImagePath);
 
               const creditMonth = calcCredit(car.priceBYN);
               const leasingMonth = calcLeasing(car.priceBYN);
@@ -91,16 +110,19 @@ export default function NewCarsSection() {
               return (
                 <div
                   key={car.id}
-                  className="carousel-item xz:w-[260px] sd:w-[430px] sd:mx-3 xz:mx-1 snap-start"
+                  className="carousel-item font-system xz:w-[260px] sd:w-[430px] sd:mx-3 xz:mx-1 snap-start"
                 >
                   <article className="relative w-full rounded-[22px] shadow-xl overflow-hidden">
                     {/* Вся карточка — высокое фото */}
                     <div className="relative w-full h-[420px] sd:h-[580px]">
-                      <img
+                      <Image
                         src={imageSrc}
                         alt={car.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        priority={false}
                         loading="lazy"
+                        className="object-cover"
+                        sizes="(max-width: 768px) 260px, 430px"
                       />
 
                       {/* тёмный градиент, чтобы читался текст */}

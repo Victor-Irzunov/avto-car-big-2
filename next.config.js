@@ -4,9 +4,8 @@ const nextConfig = {
   images: {
     // Для /uploads мы будем использовать unoptimized, но оставим внешние домены на будущее
     remotePatterns: [
-      // продакшен (IDN в punycode) с www и без
-      { protocol: 'https', hostname: 'xn--80aaf6atok.xn--90ais' },
-      { protocol: 'https', hostname: 'www.xn--80aaf6atok.xn--90ais' },
+      { protocol: 'https', hostname: 'carforbuy.by' },
+      { protocol: 'https', hostname: 'www.carforbuy.by' },
 
       // локальная разработка
       { protocol: 'http', hostname: 'localhost', pathname: '/uploads/**' },

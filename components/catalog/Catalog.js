@@ -96,7 +96,7 @@ export const Catalog = ({ data, isAdmin }) => {
 
                 {/* Заголовок авто */}
                 <div className="pointer-events-none absolute top-5 left-6 right-32">
-                  <h3 className="text-white sd:text-xl xz:text-lg font-semibold leading-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                  <h3 className="text-black sd:text-xl xz:text-lg font-semibold leading-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
                     {car.title}
                   </h3>
                 </div>

@@ -1,17 +1,21 @@
-// my-app/app/kontakty/page.js
+// /app/kontakty/page.js — ПОЛНОСТЬЮ
 
 import React from "react";
 import Image from "next/image";
-import phoneNumbers from "@/config/config";
+import phoneNumbers, {
+  companyInfo,
+  mapLinks,
+} from "@/config/config";
+import Otzyvy from "@/components/MainSections/Otzyvy";
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "";
 
+// Новый iframe Яндекс-карты (Куйбышева, 40)
 const mapEmbedHtml = `
 <div style="position:relative;overflow:hidden;width:100%;height:100%;border-radius:18px;">
-  <a href="https://yandex.by/maps/org/avtokar/122416526987/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0;left:-9999px;">Автокар</a>
-  <a href="https://yandex.by/maps/157/minsk/category/car_dealership/184105322/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;left:-9999px;">Автосалон в Минске</a>
-  <a href="https://yandex.by/maps/157/minsk/category/sale_of_used_cars/190246757599/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;left:-9999px;">Продажа автомобилей с пробегом в Минске</a>
-  <iframe src="https://yandex.by/map-widget/v1/?ll=27.578063%2C53.921117&mode=search&oid=122416526987&ol=biz&tab=gallery&z=16.72"
+  <a href="https://yandex.by/maps/157/minsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;left:-9999px;">Минск</a>
+  <a href="https://yandex.by/maps/157/minsk/house/Zk4YcwBoSUMDQFtpfXVzcH1iYw==/?ll=27.577695%2C53.920753&utm_medium=mapframe&utm_source=maps&z=16.9" style="color:#eee;font-size:12px;position:absolute;top:14px;left:-9999px;">Улица Куйбышева, 40 — Яндекс Карты</a>
+  <iframe src="https://yandex.by/map-widget/v1/?ll=27.577695%2C53.920753&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg2NjY4MTk1ORJB0JHQtdC70LDRgNGD0YHRjCwg0JzRltC90YHQuiwg0LLRg9C70ZbRhtCwINCa0YPQudCx0YvRiNCw0LLQsCwgNDAiCg3en9xBFTmvV0I%2C&z=16.9"
           width="100%"
           height="100%"
           frameborder="1"
@@ -21,24 +25,10 @@ const mapEmbedHtml = `
 </div>
 `;
 
-const reviewsEmbedHtml = `
-<div style="width:100%;height:100%;overflow:hidden;position:relative;border-radius:18px;">
-  <iframe style="width:100%;height:100%;border:1px solid #2f2f2f;border-radius:18px;box-sizing:border-box"
-          src="https://yandex.ru/maps-reviews-widget/122416526987?comments">
-  </iframe>
-  <a href="https://yandex.by/maps/org/avtokar/122416526987/"
-     target="_blank"
-     rel="noreferrer"
-     style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 16px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;max-height:14px;white-space:nowrap;">
-    Автокар на карте Минска — Яндекс Карты
-  </a>
-</div>
-`;
-
 export const metadata = {
   title:
     "Купить бу авто в Минске | Лизинг и Кредит на авто с пробегом | Покупка, продажа, обмен",
-  description: `ᐈ ⭐ Автосалон «AvtoCar»: Купить или продать автомобиль быстро ⚡ Кредит и лизинг на б/у авто ⚡ Большой выбор автомобилей ⚡ Помощь в выборе авто ⭐ Офомление в день подачи ⭐ Без взоса ✓ Без справок и поручителей ➤➤➤ До 10 лет ☎️ ${phoneNumbers.mainPhone} Автосалон «АвтоКар» ⭐ Нас советуют друзьям 🔥 Звоните прямо сейчас!`,
+  description: `ᐈ ⭐ Автосалон «AvtoCar»: Купить или продать автомобиль быстро ⚡ Кредит и лизинг на б/у авто ⚡ Большой выбор автомобилей ⚡ Помощь в выборе авто ⭐ Оформление в день подачи ⭐ Без взноса ✓ Без справок и поручителей ➤➤➤ До 10 лет ☎️ ${phoneNumbers.mainPhone} Автосалон «АвтоКар» ⭐ Нас советуют друзьям 🔥 Звоните прямо сейчас!`,
   alternates: {
     canonical: `${SITE_URL}/kontakty/`,
   },
@@ -86,7 +76,7 @@ const jsonLd = {
     "@type": "PostalAddress",
     addressCountry: "BY",
     addressLocality: "Минск",
-    streetAddress: "ул. Куйбышева 40, паркинг 4 этаж",
+    streetAddress: companyInfo.visitAddress,
   },
   openingHoursSpecification: [
     {
@@ -141,7 +131,7 @@ const Page = () => {
             <div>
               <div className="flex items-center gap-3">
                 <Image
-                  src="/logo/logo-white.webp"
+                  src="/logo/logo.webp"
                   alt="AvtoCar логотип"
                   width={72}
                   height={72}
@@ -175,7 +165,7 @@ const Page = () => {
                   Позвонить: {phone}
                 </a>
                 <a
-                  href="https://yandex.by/maps/-/CLc8ySNB"
+                  href={mapLinks.yandexRoute}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-white/40 px-7 sd:px-9 py-3 text-sm sd:text-base font-semibold text-white/90 hover:bg-white/5 transition backdrop-blur-[2px]"
@@ -202,8 +192,8 @@ const Page = () => {
                 <div className="flex items-start gap-2">
                   <span className="mt-[6px] h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
                   <p>
-                    <strong>Адрес:</strong> г. Минск, ул. Куйбышева 40, паркинг
-                    4 этаж — тёплая крытая парковка с большим выбором авто.
+                    <strong>Адрес:</strong> {companyInfo.visitAddress} — удобный
+                    подъезд и комфортный осмотр авто.
                   </p>
                 </div>
                 <div className="flex items-start gap-2">
@@ -217,8 +207,8 @@ const Page = () => {
                   <span className="mt-[6px] h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
                   <p>
                     <strong>Услуги:</strong> продажа и покупка авто с пробегом,
-                    кредит, лизинг, выкуп, обмен, комиссионная продажа,
-                    подбор авто.
+                    кредит, лизинг, выкуп, обмен, комиссионная продажа, подбор
+                    авто.
                   </p>
                 </div>
               </div>
@@ -272,16 +262,14 @@ const Page = () => {
                     </div>
                     <div>
                       <p className="text-gray-400 text-xs uppercase tracking-[0.12em]">
-                        адрес
+                        адрес для посещения
                       </p>
                       <p className="text-base font-semibold">
-                        г. Минск, ул. Куйбышева 40,
-                        <br />
-                        паркинг 4 этаж
+                        {companyInfo.visitAddress}
                       </p>
                       <p className="text-gray-400 text-xs mt-1">
-                        Въезд на парковку через шлагбаум, парковочные места для
-                        клиентов AvtoCar.
+                        Удобное расположение и комфортные условия осмотра
+                        автомобилей.
                       </p>
                     </div>
                   </div>
@@ -330,57 +318,77 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Блок преимуществ */}
-      <section className="container mx-auto  mt-10 sd:mt-14">
+      {/* Контактные данные и реквизиты — три блока */}
+      <section className="container mx-auto mt-10 sd:mt-14">
         <div className="grid gap-6 sd:grid-cols-3">
-          {[
-            {
-              title: "Крытая тёплая парковка",
-              text: "Комфортный осмотр авто в любое время года — без дождя и снега.",
-              icon: "/svg/parking.svg",
-            },
-            {
-              title: "Все услуги в одном месте",
-              text: "Продажа, выкуп, трейд-ин, комиссионная продажа, кредит и лизинг.",
-              icon: "/svg/services.svg",
-            },
-            {
-              title: "Честный подход",
-              text: "Прозрачные условия, реальные пробеги и полное юридическое сопровождение.",
-              icon: "/svg/shield.svg",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="relative overflow-hidden rounded-3xl bg-[#1b1b1b] border border-white/5 px-5 py-6 sd:px-6 sd:py-7 shadow-[0_16px_40px_rgba(0,0,0,0.7)]"
-            >
-              <div className="absolute -top-16 -right-10 h-32 w-32 rounded-full bg-[#03481E]/20 blur-3xl" />
-              <div className="relative flex gap-4">
-                <div className="mt-1 rounded-full max-h-10 max-w-10 bg-[#03481E] p-2 flex items-center justify-center">
-                  <Image
-                    src={item.icon}
-                    alt={item.title}
-                    width={36}
-                    height={36}
-                  />
-                </div>
-                <div>
-                  <h3 className="text-base sd:text-lg font-semibold mb-1.5">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-300">{item.text}</p>
-                </div>
-              </div>
+          {/* Адрес для посещения */}
+          <div className="relative overflow-hidden rounded-3xl bg-[#1b1b1b] border border-white/5 px-5 py-6 sd:px-6 sd:py-7 shadow-[0_16px_40px_rgba(0,0,0,0.7)]">
+            <div className="absolute -top-16 -right-10 h-32 w-32 rounded-full bg-[#03481E]/20 blur-3xl" />
+            <div className="relative">
+              <h2 className="text-base sd:text-lg font-semibold mb-2">
+                Адрес для посещения
+              </h2>
+              <p className="text-sm text-gray-200 mb-2">
+                {companyInfo.visitAddress}
+              </p>
+              <p className="text-xs text-gray-400">
+                Здесь вы можете осмотреть автомобили, обсудить условия покупки,
+                кредита, лизинга, обмена и выкупа.
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* Юридический адрес */}
+          <div className="relative overflow-hidden rounded-3xl bg-[#1b1b1b] border border-white/5 px-5 py-6 sd:px-6 sd:py-7 shadow-[0_16px_40px_rgba(0,0,0,0.7)]">
+            <div className="absolute -top-16 -right-10 h-32 w-32 rounded-full bg-[#03481E]/20 blur-3xl" />
+            <div className="relative">
+              <h2 className="text-base sd:text-lg font-semibold mb-2">
+                Юридический адрес
+              </h2>
+              <p className="text-sm text-gray-200">
+                {companyInfo.companyName}
+              </p>
+              <p className="text-sm text-gray-200 mt-1">
+                УНП {companyInfo.unp}
+              </p>
+              <p className="text-sm text-gray-200 mt-1">
+                {companyInfo.legalAddress}
+              </p>
+              <p className="text-xs text-gray-400 mt-2">
+                Адрес для официальной корреспонденции и юридических документов.
+              </p>
+            </div>
+          </div>
+
+          {/* Банковские реквизиты */}
+          <div className="relative overflow-hidden rounded-3xl bg-[#1b1b1b] border border-white/5 px-5 py-6 sd:px-6 sd:py-7 shadow-[0_16px_40px_rgba(0,0,0,0.7)]">
+            <div className="absolute -top-16 -right-10 h-32 w-32 rounded-full bg-[#03481E]/20 blur-3xl" />
+            <div className="relative">
+              <h2 className="text-base sd:text-lg font-semibold mb-2">
+                Банковские реквизиты
+              </h2>
+              <p className="text-sm text-gray-200">
+                Банк: {companyInfo.bankName}
+              </p>
+              <p className="text-sm text-gray-200 mt-1">
+                {companyInfo.bankAddress}
+              </p>
+              <p className="text-sm text-gray-200 mt-1">
+                БИК: {companyInfo.bik}
+              </p>
+              <p className="text-sm text-gray-200 mt-1 break-all">
+                р/с: {companyInfo.account}
+              </p>
+              <p className="text-xs text-gray-400 mt-2">
+                Реквизиты для безналичных расчетов и договоров.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Карта и как добраться */}
-      <section
-        id="map"
-        className="container mx-auto  mt-12 sd:mt-16"
-      >
+      <section id="map" className="container mx-auto mt-12 sd:mt-16">
         <div className="grid gap-8 sd:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
           <div className="h-[320px] sd:h-[420px] bg-[#101010] rounded-[22px] border border-white/5 overflow-hidden">
             <div
@@ -397,16 +405,16 @@ const Page = () => {
               <li className="flex gap-2">
                 <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
                 <p>
-                  На автомобиле — въезд на крытую парковку по указателям
-                  &laquo;AvtoCar&raquo; с ул. Куйбышева. На шлагбауме скажите, что
-                  вы в автосалон.
+                  На автомобиле — ориентируйтесь на адрес{" "}
+                  <strong>{companyInfo.visitAddress}</strong>. Удобный подъезд и
+                  парковочные места рядом.
                 </p>
               </li>
               <li className="flex gap-2">
                 <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
                 <p>
-                  Общественный транспорт — остановка &laquo;Куйбышева&raquo;,
-                  далее 3–5 минут пешком до бизнес-центра и въезда на парковку.
+                  Общественный транспорт — остановка «Куйбышева», далее 3–5
+                  минут пешком до бизнес-центра и входа.
                 </p>
               </li>
               <li className="flex gap-2">
@@ -421,7 +429,7 @@ const Page = () => {
 
             <div className="mt-6">
               <a
-                href="https://yandex.by/maps/-/CLc8ySNB"
+                href={mapLinks.yandexRoute}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-[#03481E] px-7 py-2.5 text-sm font-semibold text-white hover:bg-[#046828] transition"
@@ -433,62 +441,47 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Отзывы Яндекс */}
-      <section className="container mx-auto  mt-12 sd:mt-16">
-        <div className="grid gap-8 sd:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] items-stretch">
-          <div className="rounded-[22px] bg-[#1a1a1a] border border-white/5 px-5 py-6 sd:px-7 sd:py-7">
-            <h2 className="text-[22px] sd:text-[26px] font-semibold mb-4">
-              Почему нас выбирают
-            </h2>
-            <ul className="space-y-3 text-sm text-gray-200">
-              <li className="flex gap-2">
-                <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
-                <p>
-                  Большой выбор автомобилей с пробегом в наличии на крытой
-                  площадке — все авто можно осмотреть в один визит.
-                </p>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
-                <p>
-                  Помощь в подборе, проверка авто и честное оформление документов
-                  без скрытых платежей.
-                </p>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
-                <p>
-                  Кредит и лизинг от банков-партнёров — решение по финансированию
-                  прямо в салоне.
-                </p>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
-                <p>
-                  Выкуп, обмен и комиссионная продажа авто — вы выбираете
-                  формат, мы помогаем с реализацией.
-                </p>
-              </li>
-            </ul>
-
-            <div className="mt-6">
-              <a
-                href={`${SITE_URL}/vykup-avto/`}
-                className="inline-flex items-center justify-center rounded-full bg-white/10 px-7 py-2.5 text-sm font-semibold text-white hover:bg-white/20 transition"
-              >
-                Узнать условия выкупа и обмена
-              </a>
-            </div>
-          </div>
-
-          <div className="h-[360px] sd:h-[420px] bg-[#101010] rounded-[22px] border border-white/5 overflow-hidden">
-            <div
-              className="w-full h-full"
-              dangerouslySetInnerHTML={{ __html: reviewsEmbedHtml }}
-            />
-          </div>
+      {/* Блок "Почему нас выбирают" + ОТДЕЛЬНО отзывы-карусель */}
+      <section className="container mx-auto mt-12 sd:mt-16">
+        <div className="rounded-[22px] bg-[#1a1a1a] border border-white/5 px-5 py-6 sd:px-7 sd:py-7">
+          <h2 className="text-[22px] sd:text-[26px] font-semibold mb-4">
+            Почему нас выбирают
+          </h2>
+          <ul className="space-y-3 text-sm text-gray-200">
+            <li className="flex gap-2">
+              <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
+              <p>
+                Большой выбор автомобилей с пробегом в наличии — можно осмотреть
+                несколько вариантов за один визит.
+              </p>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
+              <p>
+                Помощь в подборе, проверка авто и честное оформление документов
+                без скрытых платежей.
+              </p>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
+              <p>
+                Кредит и лизинг от банков-партнёров — решение по финансированию
+                прямо в салоне.
+              </p>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-[6px] max-h-1.5 min-w-1.5 rounded-full bg-[#00ff5a]" />
+              <p>
+                Выкуп, обмен и комиссионная продажа авто — вы выбираете формат,
+                мы помогаем с реализацией.
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
+
+      {/* Отзывы — карусель */}
+      <Otzyvy />
 
       {/* JSON-LD */}
       <script

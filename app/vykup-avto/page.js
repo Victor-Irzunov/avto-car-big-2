@@ -404,7 +404,7 @@ const page = () => {
             <div>
               <div className="flex items-center gap-3">
                 <Image
-                  src="/logo/logo-white.webp"
+                  src="/logo/logo.webp"
                   alt="Логотип AvtoCar"
                   width={80}
                   height={80}

@@ -67,7 +67,7 @@ const CauruselSimilar = ({ data }) => {
             </button>
             <div className="bg-[#222222] px-6 py-8 text-center rounded-xl text-white">
               <Image
-                src="/logo/logo-white.webp"
+                src="/logo/logo.webp"
                 alt="AvtoCar — продажа авто в кредит и лизинг"
                 width={120}
                 height={120}
@@ -149,9 +149,8 @@ const CauruselSimilar = ({ data }) => {
 
             const firstImage = imagesArr[0] || null;
             const imageSrc = firstImage
-              ? `${process.env.NEXT_PUBLIC_BASE_URL || ""}/uploads/${
-                  firstImage.original || firstImage.thumbnail
-                }`
+              ? `${process.env.NEXT_PUBLIC_BASE_URL || ""}/uploads/${firstImage.original || firstImage.thumbnail
+              }`
               : "/img/no-car.webp";
 
             return (
